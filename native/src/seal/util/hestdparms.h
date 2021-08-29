@@ -15,6 +15,28 @@ namespace seal
         HomomorphicEncryption.org security standard. Microsoft SEAL samples the secret key
         from a ternary {-1, 0, 1} distribution.
         */
+
+        SEAL_NODISCARD constexpr int seal_he_std_parms_91_tc(std::size_t poly_modulus_degree) noexcept
+        {
+            switch (poly_modulus_degree)
+            {
+            case std::size_t(1024):
+                return 27;
+            case std::size_t(2048):
+                return 54;
+            case std::size_t(4096):
+                return 109;
+            case std::size_t(8192):
+                return 400;
+            case std::size_t(16384):
+                return 438;
+            case std::size_t(32768):
+                return 881;
+            }
+            return 0;
+        }
+
+
         // Ternary secret; 128 bits classical security
         SEAL_NODISCARD constexpr int seal_he_std_parms_128_tc(std::size_t poly_modulus_degree) noexcept
         {
@@ -74,6 +96,27 @@ namespace seal
                 return 237;
             case std::size_t(32768):
                 return 476;
+            }
+            return 0;
+        }
+
+        // Ternary secret; 91 bits quantum security
+        SEAL_NODISCARD constexpr int seal_he_std_parms_91_tq(std::size_t poly_modulus_degree) noexcept
+        {
+            switch (poly_modulus_degree)
+            {
+            case std::size_t(1024):
+                return 25;
+            case std::size_t(2048):
+                return 51;
+            case std::size_t(4096):
+                return 101;
+            case std::size_t(8192):
+                return 400;
+            case std::size_t(16384):
+                return 411;
+            case std::size_t(32768):
+                return 827;
             }
             return 0;
         }

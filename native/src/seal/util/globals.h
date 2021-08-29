@@ -39,6 +39,9 @@ For .NET Framework wrapper support (C++/CLI) we need to
 
             constexpr double noise_max_deviation = noise_standard_deviation * noise_distribution_width_multiplier;
 
+
+            const std::map<std::size_t, std::vector<Modulus>> &GetDefaultCoeffModulus91();
+
             /**
             This data structure is a key-value storage that maps degrees of the polynomial modulus
             to vectors of Modulus elements so that when used with the default value for the

@@ -492,7 +492,7 @@ namespace seal
         */
         SEALContext(
             const EncryptionParameters &parms, bool expand_mod_chain = true,
-            sec_level_type sec_level = sec_level_type::tc128)
+            sec_level_type sec_level = sec_level_type::tc91)
             : SEALContext(parms, expand_mod_chain, sec_level, MemoryManager::GetPool())
         {}
 

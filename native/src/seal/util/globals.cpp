@@ -18,6 +18,20 @@ namespace seal
 #else
 #pragma message("WARNING: Thread-local memory pools disabled to support /clr")
 #endif
+            const map<size_t, vector<Modulus>> &GetDefaultCoeffModulus91()
+            {
+                static const map<size_t, vector<Modulus>> default_coeff_modulus_91{
+                    /*
+                    Polynomial modulus: 1x^8192 + 1
+                    Modulus count: 5
+                    Total bit count: 218 = 2 * 43 + 3 * 44
+                    */
+                    { 8192, { 0x7fffffd8001, 0x7fffffc8001, 0x8000002c001,0x80000050001, 0xfffffffc001, 0xffffff6c001, 0xfffffebc001 } }
+                };
+
+                return default_coeff_modulus_91;
+            }
+
             const map<size_t, vector<Modulus>> &GetDefaultCoeffModulus128()
             {
                 static const map<size_t, vector<Modulus>> default_coeff_modulus_128{

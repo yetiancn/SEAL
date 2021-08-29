@@ -126,6 +126,9 @@ namespace seal
 
         switch (sec_level)
         {
+        case sec_level_type::tc91:
+            return global_variables::GetDefaultCoeffModulus91().at(poly_modulus_degree);
+            
         case sec_level_type::tc128:
             return global_variables::GetDefaultCoeffModulus128().at(poly_modulus_degree);
 

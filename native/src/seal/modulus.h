@@ -394,6 +394,8 @@ namespace seal
         */
         none = 0,
 
+        tc91 = 91,
+
         /**
         128-bit security level according to HomomorphicEncryption.org standard.
         */
@@ -441,6 +443,9 @@ namespace seal
         {
             switch (sec_level)
             {
+            case sec_level_type::tc91:
+                return util::seal_he_std_parms_91_tc(poly_modulus_degree);
+
             case sec_level_type::tc128:
                 return util::seal_he_std_parms_128_tc(poly_modulus_degree);
 
